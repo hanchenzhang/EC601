@@ -1,2 +1,2 @@
-# API
-python library
+# EC601
+python, machine learning
