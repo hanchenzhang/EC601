@@ -7,4 +7,4 @@ User Stories:
 2. Alan as the director of the human resource center in his company wants to learn more about an applicant’s personality that is not revealed on the resume. 
 
 
-![floatchart](/floatchart.png)
+![floatchart](./floatchart.PNG)
