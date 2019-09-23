@@ -1,4 +1,4 @@
-## EC601 Mini Project 1
+# EC601 Mini Project 1
 
 ## Project Defination:
 This project aims at performing sentiment analysis on tweets using tweeter API and google natural language API. 
