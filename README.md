@@ -1,6 +1,6 @@
 # EC601 Mini Project 1
 
-_User Stories:_
+**User Stories:**
 
 1. Alan as the project manager in his company wants to test the integrity of the Qianqian’s project team member through (personality/technical skills/current state) that his employee hired recently.
 
