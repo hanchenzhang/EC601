@@ -5,8 +5,9 @@ import os
 import google_api
 import twitter_api
 
-#username = input('Please enter the username: ')
-username = '@BU_Tweets'
+# enter username
+username = input('Please enter the username: ')
+#username = '@BU_Tweets'
 
 # grab tweets
 twitter_api.get_tweets (username)
@@ -17,13 +18,42 @@ data = json.load(rfile)
 rfile.close()
 
 
-# use google api and store score
+# use google api and store sentiment score
 allscore = []
-for string in data:
-  score = google_api.google_sentiment(string)
+allmag = []
+text = data[0]
+date = data[1]
+for string in text:
+  score, mag = google_api.google_sentiment(string)
+  print ('')
   allscore.append(score)
+  allmag.append(mag)
 
-# analyze and print result
-mean = sum(allscore) / len (allscore)
-print ('The average score is: {:.2f}'.format(mean) )
+# anaylze sentiment
+meanscore = sum(allscore) / len (allscore)
+meanmag = sum(allmag) / len (allmag)
+
+if meanscore >= 0.25 :
+  emo = 'positive emotions'
+elif meanscore < 0.25 and meanscore > 0.1 :
+  emo = 'slightly positive emotions'
+elif meanscore < -0.1 and meanscore > -0.25 :
+  emo = 'slightly negative emotions'
+elif meanscore <= -0.25 :
+  emo = 'negative emotions'
+else :
+  if meanmag >= 0.2 :
+    emo = 'neutral emotions'
+  else : 
+    emo = 'mixted emotions'
+
+# print results 
+print ('Sentiment Analysis Results: ')
+print ('From {} to {}'.format(date[-1], date[0]))
+print ('The average score is: {:.2f}'.format(meanscore) )
+print ('The average magnitude is: {:.2f}'.format(meanmag) )
+print ('The user {} reflects {}.'.format(username,emo))
+
+
+
 
