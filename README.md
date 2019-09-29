@@ -8,12 +8,15 @@ Users can grab tweets from a particular user and get a sentiment score on the tw
 This can be helpful in social media sentiment analysis.
 
 ### User Stories:
-Alan as the project manager in his company wants to test the integrity of the Qianqian’s project team member through current state that his employee hired recently.
+1. Alan as the project manager in his company wants to test the integrity of the Qianqian’s project team member through current state that his employee hired recently.
+2. Alan as the director of the human resource center in his company wants to learn more about an applicant’s personality that is not revealed on the resume. 
+
 
 ### Target Users:
-Project manager, team leader.
+Project manager, team leader, and HR. 
 
 ### MVP:
+The product should be able to take a username as input and perform sentiment analysis on 15 most recent tweets of this user. The output should be an average sentiment score and an interpretation of the score. 
 
 ## System Design
 
@@ -25,10 +28,12 @@ Project manager, team leader.
 2. After cloning this mini project  and requried package into the targeted directory, open the mini.py and type in the username of the person you want to test with. 
 3. Run the mini.py on the terminal.
 
+
 ## Testing Result:
 ![testresult](./Sentiment_Results.PNG)
 
-This test is based on the BU official account. The system sampled the most recent ten posts. It analyze the content of the post and give a score between 0.5 ~ -0.5, from postive feeling to negative feeling. The system also throws back a magnitude of entity. The eventual result is the average score and the average magnitude of entity. The official account should be positive (positive score)  and moderate (low magnitude), which matched the expected result.
+This test is based on the BU official account. The system sampled the most recent ten posts. It analyze the content of the post and give a score between 0.5 ~ -0.5, from postive feeling to negative feeling. The system also throws back a magnitude of entity. The eventual result is the average score and the average magnitude of entity. The official account should be positive (positive score) and moderate (low magnitude), which matched the expected result.
+
 
 ## Lessons Learned:
 More test sample and more time could give this system more detailed sentimental analysis. For example, the system can display what type of tweet that the tester like to post and get to know the person's point of interest and what (he/she) is good at.
